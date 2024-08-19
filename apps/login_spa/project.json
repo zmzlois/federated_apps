@@ -1,0 +1,55 @@
+{
+  "name": "login_spa",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/login_spa/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rspack:rspack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "web",
+        "outputPath": "dist/apps/login_spa",
+        "main": "apps/login_spa/src/main.tsx",
+        "tsConfig": "apps/login_spa/tsconfig.app.json",
+        "rspackConfig": "apps/login_spa/rspack.config.js",
+        "assets": [
+          "apps/login_spa/src/favicon.ico",
+          "apps/login_spa/src/assets"
+        ]
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production",
+          "optimization": true,
+          "sourceMap": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/rspack:dev-server",
+      "options": {
+        "buildTarget": "login_spa:build:development"
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "buildTarget": "login_spa:build:production"
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "login_spa:build",
+        "spa": true
+      }
+    }
+  }
+}
