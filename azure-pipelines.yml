@@ -41,7 +41,7 @@ jobs:
         env:
           AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
 
-      - script: npm install --prefix=$HOME/.local -g pnpm@8
+      - script: npm install --prefix=$HOME/.local -g pnpm@9.05
         displayName: Install PNPM
 
       # This enables task distribution via Nx Cloud
