@@ -14,7 +14,9 @@ const config: ModuleFederationConfig = {
    * declare module 'my-external-remote';
    *
    */
-  remotes: [],
+  remotes: [
+    ['home-spa', 'http://localhost:4201']
+  ],
 };
 
 export default config;

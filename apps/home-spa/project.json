@@ -1,7 +1,7 @@
 {
-  "name": "shell",
+  "name": "home-spa",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/shell/src",
+  "sourceRoot": "apps/home-spa/src",
   "projectType": "application",
   "tags": [],
   "targets": {
@@ -11,16 +11,16 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/apps/shell",
-        "index": "apps/shell/src/index.html",
+        "outputPath": "dist/apps/home-spa",
+        "index": "apps/home-spa/src/index.html",
         "baseHref": "/",
-        "main": "apps/shell/src/main.ts",
-        "tsConfig": "apps/shell/tsconfig.app.json",
-        "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
-        "styles": ["apps/shell/src/styles.css"],
+        "main": "apps/home-spa/src/main.ts",
+        "tsConfig": "apps/home-spa/tsconfig.app.json",
+        "assets": ["apps/home-spa/src/favicon.ico", "apps/home-spa/src/assets"],
+        "styles": ["apps/home-spa/src/styles.tailwind"],
         "scripts": [],
-        "webpackConfig": "apps/shell/webpack.config.ts",
-        "postcssConfig": "apps/shell/postcss.config.js"
+        "webpackConfig": "apps/home-spa/webpack.config.ts",
+        "postcssConfig": "apps/home-spa/postcss.config.js"
       },
       "configurations": {
         "development": {
@@ -32,8 +32,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/shell/src/environments/environment.ts",
-              "with": "apps/shell/src/environments/environment.prod.ts"
+              "replace": "apps/home-spa/src/environments/environment.ts",
+              "with": "apps/home-spa/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -42,7 +42,7 @@
           "namedChunks": false,
           "extractLicenses": true,
           "vendorChunk": false,
-          "webpackConfig": "apps/shell/webpack.config.prod.ts"
+          "webpackConfig": "apps/home-spa/webpack.config.prod.ts"
         }
       }
     },
@@ -50,16 +50,16 @@
       "executor": "@nx/react:module-federation-dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "shell:build",
+        "buildTarget": "home-spa:build",
         "hmr": true,
-        "port": 4200
+        "port": 4201
       },
       "configurations": {
         "development": {
-          "buildTarget": "shell:build:development"
+          "buildTarget": "home-spa:build:development"
         },
         "production": {
-          "buildTarget": "shell:build:production",
+          "buildTarget": "home-spa:build:production",
           "hmr": false
         }
       }
@@ -68,16 +68,16 @@
       "executor": "@nx/web:file-server",
       "defaultConfiguration": "production",
       "options": {
-        "buildTarget": "shell:build",
+        "buildTarget": "home-spa:build",
         "watch": false,
-        "port": 4200
+        "port": 4201
       },
       "configurations": {
         "development": {
-          "buildTarget": "shell:build:development"
+          "buildTarget": "home-spa:build:development"
         },
         "production": {
-          "buildTarget": "shell:build:production"
+          "buildTarget": "home-spa:build:production"
         }
       }
     }

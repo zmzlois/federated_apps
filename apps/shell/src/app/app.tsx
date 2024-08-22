@@ -4,6 +4,8 @@ import NxWelcome from './nx-welcome';
 
 import { Link, Route, Routes } from 'react-router-dom';
 
+const HomeSpa = React.lazy(() => import('home-spa/Module'));
+
 export function App() {
   return (
     <React.Suspense fallback={null}>
@@ -11,9 +13,13 @@ export function App() {
         <li>
           <Link to="/">Home</Link>
         </li>
+        <li>
+          <Link to="/home-spa">HomeSpa</Link>
+        </li>
       </ul>
       <Routes>
         <Route path="/" element={<NxWelcome title="shell" />} />
+        <Route path="/home-spa" element={<HomeSpa />} />
       </Routes>
     </React.Suspense>
   );

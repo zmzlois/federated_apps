@@ -1,0 +1,4 @@
+{
+  "name": "login_spa",
+  "_comment": "Hate this about json files.. But the name of the package.json needs to match the folder for zephyr"
+}

@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "home-spa/Module": ["apps/home-spa/src/remote-entry.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
