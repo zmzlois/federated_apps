@@ -1,6 +1,8 @@
 import { composePlugins, withNx, ModuleFederationConfig } from '@nx/webpack';
 import { withReact } from '@nx/react';
 import { withModuleFederation } from '@nx/react/module-federation';
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import { withZephyr } from "zephyr-webpack-plugin"
 
 import baseConfig from './module-federation.config';
 
@@ -17,5 +19,6 @@ const config: ModuleFederationConfig = {
 export default composePlugins(
   withNx(),
   withReact(),
-  withModuleFederation(config, { dts: false })
+  withModuleFederation(config, { dts: false }),
+  withZephyr()
 );

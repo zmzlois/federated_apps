@@ -1,4 +1,8 @@
 {
-  "name":"home-spa",
-  "version": "0.0.1"
+  "name": "home-spa",
+  "version": "0.0.1",
+  "dependencies": {
+    "@nx/webpack": "^19.6.2",
+    "zephyr-webpack-plugin": "0.0.16"
+  }
 }

@@ -8,9 +8,7 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-router-dom": "6.11.2",
-    "tslib": "^2.3.0",
-    "zephyr-edge-contract": "^0.0.16",
-    "zephyr-webpack-plugin": "^0.0.16"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
@@ -23,7 +21,6 @@
     "@nx/react": "19.6.1",
     "@nx/rspack": "19.5.0",
     "@nx/web": "19.6.1",
-    "@nx/webpack": "19.6.1",
     "@nx/workspace": "19.6.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@rspack/cli": "^0.7.5",

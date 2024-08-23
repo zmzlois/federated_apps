@@ -1,3 +1,4 @@
+/* eslint-disable @nx/enforce-module-boundaries */
 import { composePlugins, withNx } from '@nx/webpack';
 import { withReact } from '@nx/react';
 import { withModuleFederation } from '@nx/react/module-federation';
@@ -20,7 +21,7 @@ export default composePlugins(
   withReact(),
   withModuleFederation(config, { dts: false }),
   withZephyr(),
-  (config) =>{
+  (config) => {
     return config;
   }
 );

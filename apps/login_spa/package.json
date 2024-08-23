@@ -1,4 +1,8 @@
 {
   "name": "login_spa",
-  "_comment": "Hate this about json files.. But the name of the package.json needs to match the folder for zephyr"
+  "_comment": "Hate this about json files.. But the name of the package.json needs to match the folder for zephyr",
+  "dependencies": {
+    "@nx/webpack": "^19.6.2",
+    "zephyr-webpack-plugin": "0.0.16"
+  }
 }
