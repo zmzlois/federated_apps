@@ -18,6 +18,8 @@ pool:
 jobs:
 - job: BuildShell
   steps:
-    - script: echo Hello, world!
-      displayName: 'Run a one-line script'
+    - script: |
+        # Setting a variable based on what project has had file changes
+        condition: and(containsValue(variables['Build.SourceVersionPaths'], 'apps/shell')
+        echo "Hello world"
 
