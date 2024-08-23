@@ -1,9 +1,5 @@
-name: CI
+name: base_template
 
-trigger:
-  - main
-pr:
-  - main
 
 variables:
   CI: 'true'
@@ -17,7 +13,7 @@ variables:
   HEAD_SHA: $(git rev-parse HEAD)
 
 jobs:
-  - job: main
+  - job: Setup_CI_And_Dependencies
     pool:
       vmImage: 'ubuntu-latest'
     steps:
