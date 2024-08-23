@@ -19,7 +19,10 @@ jobs:
 - job: BuildShell
   steps:
     - script: |
-        echo "Hello world"
-      condition: and(succeeded(), containsValue(variables['Build.SourceVersionPaths'], 'apps/shell'))
+        curl -X POST \
+         -u $(System.AccessToken): \
+         -d '{"resources": {"repositories": {"self": {"refName": "refs/heads/main"}}}}' \
+         https://dev.azure.com/xdevrspace/Federated_App_Deployments/_apis/pipelines/shell-deployment-pipeline/runs?api-version=7.1-preview.1
+      # condition: and(succeeded(), containsValue(variables['Build.SourceVersionPaths'], 'apps/shell'))
         
 
