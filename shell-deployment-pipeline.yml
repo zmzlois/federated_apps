@@ -19,7 +19,7 @@ jobs:
 - job: BuildShell
   steps:
     - script: |
-        # Setting a variable based on what project has had file changes
-        condition: and(containsValue(variables['Build.SourceVersionPaths'], 'apps/shell'))
         echo "Hello world"
+      condition: and(succeeded(), containsValue(variables['Build.SourceVersionPaths'], 'apps/shell'))
+        
 
