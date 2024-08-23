@@ -21,6 +21,7 @@ jobs:
     - script: |
         curl -X POST \
          -u $(System.AccessToken): \
+         -H "Content-Type: application/json" \
          -d '{"resources": {"repositories": {"self": {"refName": "refs/heads/main"}}}}' \
          https://dev.azure.com/xdevrspace/Federated_App_Deployments/_apis/pipelines/shell-deployment-pipeline/runs?api-version=7.1-preview.1
       # condition: and(succeeded(), containsValue(variables['Build.SourceVersionPaths'], 'apps/shell'))
